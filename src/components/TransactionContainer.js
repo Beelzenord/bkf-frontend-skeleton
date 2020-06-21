@@ -9,17 +9,23 @@ class TransactionContainer extends React.Component{
            {
                id:uuidv4(),
                title:"Setup development environment",
-               completed:true
+               segment:"some segment",
+               completed:true,
+               date : new Date(2019,11,17)
            },
            {
             id: uuidv4(),
             title: "Develop website and add content",
-            completed: false
+            segment:"",
+            completed: false,
+            date : new Date(2019,11,17)
           },
           {
             id: uuidv4(),
             title: "Deploy to live server",
-            completed: false
+            segment:"",
+            completed: false,
+            date :new Date(2019,11,17)
           }
         ]
     }
@@ -46,12 +52,14 @@ class TransactionContainer extends React.Component{
             ]
           });
     };
-    addTransactionItem = title =>{
-        console.log(title);
+    addTransactionItem = newState =>{
+        console.log(newState.title);
         const newTransaction={
             id: uuidv4(),
-            title:title,
-            completed:false
+            title:newState.title,
+            segment:newState.segment,
+            completed:false,
+            date: newState.date
         };
         this.setState({
             transactions:[...this.state.transactions,newTransaction]

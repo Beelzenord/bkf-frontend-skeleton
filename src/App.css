@@ -43,6 +43,7 @@
 }
 .transaction-item input{
     margin-right: 15px;
+    margin-left: 15px;
 }
 .transaction-item button{
     background: #d35e0f;
